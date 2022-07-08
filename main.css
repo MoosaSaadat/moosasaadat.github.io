@@ -10,7 +10,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
-  cursor: none;
+  /* cursor: none; */
   overflow: hidden;
 }
 
@@ -18,7 +18,12 @@ body {
   width: 150px;
   height: 150px;
   position: absolute;
+  left: calc(50% - 75px);
+  bottom: 200px;
   pointer-events: none;
+  transform-origin: right bottom;
+  animation: hand-wave 1s ease-in-out 1s 2;
+  transition: all ease-in-out;
 }
 
 .hidden {
@@ -81,7 +86,7 @@ body {
 
 .social-link {
   text-decoration: none;
-  cursor: none;
+  cursor: inherit;
 }
 
 .social-link:hover {
@@ -97,5 +102,24 @@ body {
   }
   #text {
     font-size: 24px;
+  }
+}
+
+/* WAVE ANIMATION */
+@keyframes hand-wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
