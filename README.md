@@ -2,16 +2,16 @@
 
 <p align='center'>
   <a href="https://www.linkedin.com/in/muhammad-musa/" target="_blank" rel="noopener noreferrer">
-    <img src="./imgs/icons8-linkedin-circled.svg">
+    <img width="50px" src="./imgs/linkedin.png">
   </a>&nbsp;&nbsp;
   <a href="https://twitter.com/MoosaSaadat" target="_blank" rel="noopener noreferrer">
-    <img src="./imgs/icons8-twitter-circled.svg">
+    <img width="50px" src="./imgs/twitter.png">
   </a>&nbsp;&nbsp;
   <a href="https://stackoverflow.com/u/11395861" target="_blank" rel="noopener noreferrer">
-    <img src="./imgs/icons8-stackoverflow-circled.svg">
+    <img width="50px" src="./imgs/stackoverflow.png">
   </a>&nbsp;&nbsp;
   <a href="mailto:moosasaadat99@gmail.com" target="_blank" rel="noopener noreferrer">
-    <img src="./imgs/icons8-email-circled.png">
+    <img width="50px" src="./imgs/email.png">
   </a>&nbsp;&nbsp;
 </p>
 
