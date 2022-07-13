@@ -5,7 +5,7 @@
   --dark-base: #c8c8c8;
   --accent: #eded7d;
   --text: #ffffff;
-  --dark-text: #000000;
+  --dark-text: #2a313a;
 }
 
 body {
@@ -21,6 +21,7 @@ body {
   width: 100%;
   background-color: var(--base);
   color: var(--dark-text);
+  box-sizing: border-box;
 }
 
 .info {
@@ -62,14 +63,12 @@ body {
   width: 80%;
 }
 
-.contact {
-}
-
 #text {
   text-align: center;
   font-size: 18px;
   line-height: 1.5rem;
   margin: 12px 0;
+  padding: 0 12px;
 }
 
 #socials {
@@ -88,7 +87,7 @@ body {
 
 .social-link img {
   width: 17.5vw;
-  max-width: 100px;
+  max-width: 75px;
 }
 
 .social-link:hover {
@@ -119,15 +118,62 @@ footer #icons-attrib::after {
   border-bottom: 1px solid var(--dark-text);
 }
 
+a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 0.75;
+}
+
+@media screen and (min-width: 768px) {
+  .illustration img {
+    max-width: 60%;
+  }
+  #title {
+    font-size: 70px;
+  }
+  #subtitle {
+    font-size: 30px;
+  }
+  #text {
+    font-size: 22px;
+    margin: 18px 0;
+  }
+}
+
 @media screen and (min-width: 1024px) {
+  .main {
+    flex-flow: row wrap;
+    padding: 50px;
+  }
+  .info {
+    width: max-content;
+    align-items: flex-start;
+  }
+  .illustration {
+    flex: 1 1 0px;
+  }
+  .illustration img {
+    max-width: 80%;
+  }
+  .contact {
+    width: 100%;
+  }
   #title {
     font-size: 96px;
+    text-align: left;
   }
   #subtitle {
     font-size: 36px;
   }
   #text {
     font-size: 24px;
-    margin: 24px 0;
+  }
+  #socials {
+    max-width: 500px;
+    margin: auto;
   }
 }
