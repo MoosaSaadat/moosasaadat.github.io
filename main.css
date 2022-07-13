@@ -78,6 +78,8 @@ body {
   margin: 24px 0;
   padding: 0;
   width: 100%;
+  max-width: 500px;
+  margin: auto;
 }
 
 .social-link {
@@ -146,21 +148,22 @@ a:hover {
 
 @media screen and (min-width: 1024px) {
   .main {
-    flex-flow: row wrap;
     padding: 50px;
+    flex-flow: column wrap;
+    max-height: 100vh;
   }
   .info {
-    width: max-content;
+    order: 1;
     align-items: flex-start;
   }
   .illustration {
     flex: 1 1 0px;
+    order: 3;
   }
   .illustration img {
-    max-width: 80%;
   }
   .contact {
-    width: 100%;
+    order: 2;
   }
   #title {
     font-size: 96px;
@@ -171,9 +174,11 @@ a:hover {
   }
   #text {
     font-size: 24px;
+    padding: 0;
+    text-align: left;
   }
   #socials {
-    max-width: 500px;
-    margin: auto;
+    margin: 0;
+    justify-content: space-between;
   }
 }
