@@ -61,6 +61,18 @@ a:hover {
   box-shadow: 5px 5px var(--dark-base);
 }
 
+#subtitle a {
+  color: var(--dark-text);
+  text-decoration: none;
+  opacity: 1;
+  cursor: inherit;
+}
+
+#subtitle:hover {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
+
 .illustration {
   display: flex;
   justify-content: center;
