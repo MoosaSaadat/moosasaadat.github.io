@@ -14,22 +14,33 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 0.75;
+}
+
 .main {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
   min-height: 100vh;
   width: 100%;
+  padding: 24px;
   background-color: var(--base);
   color: var(--dark-text);
   box-sizing: border-box;
 }
 
 .info {
-  flex: 1 1 0px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 #title {
@@ -45,22 +56,27 @@ body {
   font-weight: 400;
   text-align: center;
   background-color: var(--accent);
-  color: var(--primary-light);
   margin: 0;
   padding: 12px;
-  /* border: 1px solid var(--dark-text); */
   box-shadow: 5px 5px var(--dark-base);
 }
 
 .illustration {
-  flex: 2 1 0px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .illustration img {
   width: 80%;
+  max-width: 350px;
+}
+
+.contact {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
 }
 
 #text {
@@ -75,11 +91,10 @@ body {
   display: flex;
   justify-content: space-evenly;
   list-style: none;
-  margin: 24px 0;
   padding: 0;
+  margin: 0 auto;
   width: 100%;
   max-width: 500px;
-  margin: auto;
 }
 
 .social-link {
@@ -97,21 +112,26 @@ body {
 }
 
 footer {
+  display: flex;
+  flex-flow: column nowrap;
   background-color: var(--dark-base);
-  padding: 20px 0px;
+  padding: 24px;
 }
 
-footer #icons-attrib,
-footer #illustration-attrib {
+#icons-attrib {
+  position: relative;
   text-align: center;
-  padding: 12px;
+  padding-bottom: 12px;
   margin: 0;
 }
-footer #icons-attrib {
-  position: relative;
+
+#illustration-attrib {
+  text-align: center;
+  padding-top: 12px;
+  margin: 0;
 }
 
-footer #icons-attrib::after {
+#icons-attrib::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -120,19 +140,9 @@ footer #icons-attrib::after {
   border-bottom: 1px solid var(--dark-text);
 }
 
-a {
-  text-decoration: none;
-  color: var(--accent);
-}
-
-a:hover {
-  text-decoration: underline;
-  opacity: 0.75;
-}
-
 @media screen and (min-width: 768px) {
   .illustration img {
-    max-width: 60%;
+    max-width: 400px;
   }
   #title {
     font-size: 70px;
@@ -146,7 +156,7 @@ a:hover {
   }
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .main {
     padding: 50px;
     flex-flow: column wrap;
@@ -181,4 +191,4 @@ a:hover {
     margin: 0;
     justify-content: space-between;
   }
-}
+} */
