@@ -12,6 +12,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
+  cursor: none;
 }
 
 a {
@@ -22,6 +23,16 @@ a {
 a:hover {
   text-decoration: underline;
   opacity: 0.75;
+}
+
+#cursor {
+  display: none;
+  position: absolute;
+  left: -100px;
+  top: -100px;
+  width: 100px;
+  height: 100px;
+  z-index: 100;
 }
 
 .main {
@@ -153,6 +164,9 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  #cursor {
+    display: block;
+  }
   .illustration img {
     max-width: 400px;
   }
