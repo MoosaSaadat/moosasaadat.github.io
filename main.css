@@ -13,6 +13,7 @@ body {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
   cursor: none;
+  overflow-x: hidden;
 }
 
 a {
