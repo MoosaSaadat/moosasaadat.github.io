@@ -69,7 +69,7 @@ document.addEventListener("mousemove", (e) => {
   // cursor.src = "./imgs/pointing-hand-tilted.png";
   cursor.setAttribute(
     "style",
-    `top: ${e.pageY + 5}px; left: ${e.pageX + 5}px; animation: none`
+    `top: ${e.pageY + 2}px; left: ${e.pageX + 2}px; animation: none`
   );
 
   // changeTranslationPos(e.pageX, e.pageY);
