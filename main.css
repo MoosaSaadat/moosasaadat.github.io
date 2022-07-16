@@ -8,6 +8,10 @@
   --dark-text: #2a313a;
 }
 
+::selection {
+  background: none;
+}
+
 body {
   padding: 0;
   margin: 0;
