@@ -53,7 +53,7 @@ canvas.addEventListener("mouseup", generateRandomColor);
 const logStyles = ["color: 2a313a", "font-size: 18px"];
 const logs = [
   "Didn't curiosity kill the cat?",
-  "Hint: try sketching something and share on on twitter!",
+  "Hint: try sketching something and share on twitter!",
   "https://twitter.com/MoosaSaadat",
 ];
 logs.forEach((log) => console.log(`%c${log}`, logStyles.join(";")));
