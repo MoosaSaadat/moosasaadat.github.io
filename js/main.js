@@ -71,3 +71,25 @@ document.addEventListener("mousemove", (e) => {
     `top: ${e.pageY + 2}px; left: ${e.pageX + 2}px; animation: none`
   );
 });
+
+// const title = document.querySelector("#title");
+// const firstName = document.querySelector("#first-name");
+// const secondName = document.querySelector("#second-name");
+
+// title.addEventListener("mouseenter", (e) => {
+//   console.log("enter!");
+//   // firstName.style.transform = "translateY(-100px)";
+// });
+// title.addEventListener("mouseleave", (e) => {
+//   console.log("leave!");
+// });
+
+const canvas = document.querySelector("#canvas");
+
+canvas.addEventListener("mouseenter", (e) => {
+  console.log("enter!");
+  // firstName.style.transform = "translateY(-100px)";
+});
+canvas.addEventListener("mouseleave", (e) => {
+  console.log("leave!");
+});
