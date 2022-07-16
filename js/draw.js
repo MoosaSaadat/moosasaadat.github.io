@@ -1,14 +1,20 @@
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
+const usedColors = new Set();
 const point = {
   x: 0,
   y: 0,
 };
 
+generateRandomColor();
 resizeCanvas();
 
 function generateRandomColor() {
-  point.color = Math.floor(Math.random() * 16777215).toString(16);
+  // Ensures that generated number hasn't been used before (is unique)
+  do {
+    point.color = Math.floor(Math.random() * 16777215).toString(16);
+  } while (usedColors.has(point.color));
+  usedColors.add(point.color);
 }
 
 function resizeCanvas() {
