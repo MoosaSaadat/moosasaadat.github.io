@@ -57,7 +57,7 @@ a:hover {
   z-index: -1;
 }
 
-#title,
+.title,
 #subtitle,
 .illustration img,
 #text,
@@ -73,7 +73,7 @@ a:hover {
   width: 100%;
 }
 
-#title {
+.title {
   font-family: "DM Serif Display", serif;
   font-size: 44px;
   font-weight: 400;
@@ -81,10 +81,10 @@ a:hover {
   margin: 24px 0 12px 0;
 }
 
-/* #first-name,
-#last-name {
-  transition: all 1s ease-in-out;
-} */
+.title.urdu {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: bold;
+}
 
 #subtitle {
   font-size: 24px;
@@ -204,7 +204,7 @@ footer a {
   .illustration img {
     max-width: 400px;
   }
-  #title {
+  .title {
     font-size: 70px;
   }
   #subtitle {
