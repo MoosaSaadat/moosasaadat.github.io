@@ -5,6 +5,7 @@ const point = {
   x: 0,
   y: 0,
 };
+let isDraw = false;
 
 generateRandomColor();
 resizeCanvas();
@@ -28,9 +29,6 @@ function setDrawPosition(e) {
 }
 
 function draw(e) {
-  // mouse left button must be pressed
-  if (e.buttons !== 1) return;
-
   ctx.beginPath(); // begin
 
   ctx.lineWidth = 5;
@@ -45,10 +43,32 @@ function draw(e) {
   ctx.stroke(); // draw it!
 }
 
+function clearCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function handleMouseDown(e) {
+  // must be left button click
+  if (e.buttons !== 1) return;
+
+  generateRandomColor();
+  setDrawPosition(e);
+  isDraw = true;
+}
+
+function handleMouseMove(e) {
+  if (isDraw) draw(e);
+}
+
+function handleMouseUp(e) {
+  isDraw = false;
+}
+
 window.addEventListener("resize", resizeCanvas);
-canvas.addEventListener("mousemove", draw);
-canvas.addEventListener("mousedown", setDrawPosition);
-canvas.addEventListener("mouseup", generateRandomColor);
+canvas.addEventListener("mousemove", handleMouseMove);
+canvas.addEventListener("mousedown", handleMouseDown);
+canvas.addEventListener("mouseup", handleMouseUp);
+canvas.addEventListener("dblclick", clearCanvas);
 
 const logStyles = ["color: 2a313a", "font-size: 18px"];
 const logs = [
