@@ -57,7 +57,7 @@ a:hover {
   z-index: -1;
 }
 
-.title,
+#titles-wrapper,
 #subtitle,
 .illustration img,
 #text,
@@ -73,12 +73,18 @@ a:hover {
   width: 100%;
 }
 
+#titles-wrapper {
+  height: 100px;
+  margin: 24px 0 12px 0;
+  overflow: hidden;
+}
+
 .title {
   font-family: "DM Serif Display", serif;
   font-size: 44px;
   font-weight: 400;
   text-align: center;
-  margin: 24px 0 12px 0;
+  transition: transform 200ms ease-in-out;
 }
 
 .title.urdu {

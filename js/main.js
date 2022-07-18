@@ -90,6 +90,29 @@ canvas.addEventListener("mouseup", handleMouseUp);
 canvas.addEventListener("dblclick", clearCanvas);
 
 /******************************
+ * Animate title translations
+ ******************************/
+const titlesWrapper = document.querySelector("#titles-wrapper");
+const titles = document.querySelectorAll(".title");
+let animInterval = 0;
+let idx = 0;
+
+titlesWrapper.addEventListener("mouseenter", () => {
+  animInterval = setInterval(() => {
+    const translation = (++idx % titles.length) * -100;
+    titles.forEach(
+      (title) => (title.style.transform = `translateY(${translation}%)`)
+    );
+    console.log("interval called", translation);
+  }, 1000);
+});
+titlesWrapper.addEventListener("mouseleave", () => {
+  titles.forEach((title) => (title.style.transform = "translateY(0%)"));
+  clearInterval(animInterval);
+  idx = 0;
+});
+
+/******************************
  * Prints styled messages on the console
  ******************************/
 const logStyles = ["color: 2a313a", "font-size: 18px"];
