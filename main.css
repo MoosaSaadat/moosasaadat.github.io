@@ -193,6 +193,39 @@ footer a {
   border-bottom: 1px solid var(--dark-text);
 }
 
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #00000055;
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding: 20px;
+  padding-top: 70px;
+  font-size: 24px;
+  text-align: center;
+  max-width: 50%;
+  background-color: var(--dark-text);
+  color: var(--text);
+  position: relative;
+}
+
+.content #close-btn {
+  padding: 12px;
+  font-size: 48px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 @media screen and (min-width: 768px) {
   #cursor {
     display: block;

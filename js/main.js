@@ -1,3 +1,4 @@
+const modal = document.querySelector(".modal");
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 const usedColors = new Set();
@@ -6,12 +7,15 @@ const point = {
   y: 0,
 };
 let isDraw = false;
+let isFirstDraw = true;
+let hasDrawn = false;
 
 generateRandomColor();
 resizeCanvas();
 
 function generateRandomColor() {
-  // Ensures that generated number hasn't been used before (is unique)
+  // Genarates a new random color for every stroke. Ensures that it
+  // is not the same as any of the previous colors
   do {
     point.color = Math.floor(Math.random() * 16777215).toString(16);
   } while (usedColors.has(point.color));
@@ -19,16 +23,20 @@ function generateRandomColor() {
 }
 
 function resizeCanvas() {
+  // Resizes canvas to cover the whole screen
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
 }
 
-function setDrawPosition(e) {
-  point.x = e.clientX;
-  point.y = e.clientY;
+function setDrawPosition(x, y) {
+  // Sets the draw position to the given coordinates
+  point.x = x;
+  point.y = y;
 }
 
 function draw(e) {
+  // Draws a line from previous mouse position to current
+  // mouse position
   ctx.beginPath(); // begin
 
   ctx.lineWidth = 5;
@@ -36,23 +44,30 @@ function draw(e) {
 
   ctx.strokeStyle = `#${point.color}`;
 
+  // Trigger clear warning
+  if (point.x !== e.clientX || point.y !== e.clientY) hasDrawn = true;
+
   ctx.moveTo(point.x, point.y); // from
-  setDrawPosition(e);
+  setDrawPosition(e.clientX, e.clientY);
   ctx.lineTo(point.x, point.y); // to
 
   ctx.stroke(); // draw it!
 }
 
 function clearCanvas() {
+  // Clears everything from the canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 function handleMouseDown(e) {
+  // Sets initial mouse position, generates a color and
+  // then allows drawing on canvas
+
   // must be left button click
   if (e.buttons !== 1) return;
 
   generateRandomColor();
-  setDrawPosition(e);
+  setDrawPosition(e.clientX, e.clientY);
   isDraw = true;
 }
 
@@ -62,6 +77,10 @@ function handleMouseMove(e) {
 
 function handleMouseUp(e) {
   isDraw = false;
+  if (isFirstDraw && hasDrawn) {
+    modal.style.display = "flex";
+    isFirstDraw = false;
+  }
 }
 
 window.addEventListener("resize", resizeCanvas);
@@ -70,6 +89,9 @@ canvas.addEventListener("mousedown", handleMouseDown);
 canvas.addEventListener("mouseup", handleMouseUp);
 canvas.addEventListener("dblclick", clearCanvas);
 
+/******************************
+ * Prints styled messages on the console
+ ******************************/
 const logStyles = ["color: 2a313a", "font-size: 18px"];
 const logs = [
   "Didn't curiosity kill the cat?",
@@ -77,3 +99,7 @@ const logs = [
   "https://twitter.com/MoosaSaadat",
 ];
 logs.forEach((log) => console.log(`%c${log}`, logStyles.join(";")));
+
+modal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
