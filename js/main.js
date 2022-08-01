@@ -97,6 +97,13 @@ const titles = document.querySelectorAll(".title");
 let animInterval = 0;
 let idx = 0;
 
+// Set fixed height
+const setTitleHeight = () =>
+  (titlesWrapper.style.height = `${titles[0].clientHeight}px`);
+
+window.addEventListener("load", setTitleHeight);
+window.addEventListener("resize", setTitleHeight);
+
 titlesWrapper.addEventListener("mouseenter", () => {
   animInterval = setInterval(() => {
     const translation = (++idx % titles.length) * -100;
