@@ -16,7 +16,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
-  cursor: url(./imgs/cursor-small-minified.png), auto;
+  cursor: url(./imgs/cursor-dark-small.png), auto;
   overflow-x: hidden;
 }
 
